@@ -37,7 +37,7 @@
       </tr>
       <template v-for="(item, key) in items" :key="key" v-else>
         <tr
-            :class="item.trClass"
+            :class="[item.trClass || '', { 'cursor-pointer': rowClickable }]"
             @click="onRowClicked(item)"
         >
           <template v-for="field in fields" :key="field.key">
@@ -132,6 +132,13 @@ export default {
     activeOrderByClass: {
       type: String,
       default: null,
+    },
+    /**
+     * row is clickable
+     */
+    rowClickable: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

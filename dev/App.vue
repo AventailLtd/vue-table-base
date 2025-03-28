@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table-base :items="getItems()" :fields="fields" :order-by="orderBy" @orderChanged="orderChanged" @rowClicked="onRowClicked">
+    <table-base :items="getItems()" :fields="fields" :order-by="orderBy" row-clickable @orderChanged="orderChanged" @rowClicked="onRowClicked">
       <template #sortIconAsc>
         <small>
           (active asc)
@@ -91,6 +91,17 @@ export default defineComponent({
             price: 'bg-success',
           }
         },
+        {
+          id: 3,
+          name: 'Test3',
+          price: 210,
+          trClass: 'bg-warning',
+        },
+        {
+          id: 4,
+          name: 'Test4',
+          price: 22,
+        },
       ],
       orderBy: 'name',
       sortDesc: false,
@@ -125,6 +136,9 @@ export default defineComponent({
 }
 .bg-success {
   background-color: #2ba41e;
+}
+.bg-warning {
+  background-color: #f0ad4e;
 }
 .w-100 {
   width: 100%;
