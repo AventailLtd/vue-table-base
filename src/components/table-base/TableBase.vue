@@ -74,7 +74,7 @@
                   :item="field.key in footerRowItems ? footerRowItems[field.key] : null"
                   :value="field.key in footerRowItems ? footerRowItems[field.key] : null"
               >
-                {{ field.key in footerRowItems ? footerRowItems[field.key] : '' }}
+                <b>{{ field.key in footerRowItems ? footerRowItems[field.key] : '' }}</b>
               </slot>
             </td>
           </template>
