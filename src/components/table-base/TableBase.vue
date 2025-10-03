@@ -73,7 +73,7 @@
             <td>
               <slot
                   :index="field.key"
-                  name="td"
+                  name="footer"
                   :field="field.key"
                   :row="footerRowItems"
                   :item="field.key in footerRowItems ? footerRowItems[field.key] : null"
