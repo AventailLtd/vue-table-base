@@ -67,6 +67,24 @@
           </td>
         </tr>
       </template>
+      <template v-if="footerRowItems !== null">
+        <tr>
+          <template v-for="field in fields">
+            <td>
+              <slot
+                  :index="field.key"
+                  name="td"
+                  :field="field.key"
+                  :row="footerRowItems"
+                  :item="field.key in footerRowItems ? footerRowItems[field.key] : null"
+                  :value="field.key in footerRowItems ? footerRowItems[field.key] : null"
+              >
+                <b>{{ field.key in footerRowItems ? footerRowItems[field.key] : '' }}</b>
+              </slot>
+            </td>
+          </template>
+        </tr>
+      </template>
     </tbody>
   </table>
 </template>
@@ -129,6 +147,13 @@ export default {
      */
     tdClass: {
       type: String,
+      default: null,
+    },
+    /**
+     * the footer row content
+     */
+    footerRowItems: {
+      type: Object,
       default: null,
     },
   },
