@@ -38,6 +38,16 @@
           <textarea class="w-100"/>
         </div>
       </template>
+      <template #footer>
+        <tr class="bg-light">
+          <td colspan="2"></td>
+          <td>
+            Footer Price Total: {{
+              items.reduce((total, item) => total + item.price, 0)
+            }}
+          </td>
+        </tr>
+      </template>
     </table-base>
     <div>
       Order:
@@ -139,6 +149,9 @@ export default defineComponent({
 }
 .bg-warning {
   background-color: #f0ad4e;
+}
+.bg-light {
+  background-color: #f8f9fa;
 }
 .w-100 {
   width: 100%;
